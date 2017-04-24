@@ -60,30 +60,31 @@ body {
   height:100%;
   text-align:center;
   font-size:18px;
+  margin: 0;
 }
 
 .wrapper {
   @include clear;
   width:100%;
-  
 }
 
 .indy-bg {
-  background: url('../img/indiana-jones.jpg') center;
+  background: url('../img/indiana-jones.jpg') center #000;
 }
 
 .harry-bg {
-  background: url('../img/harry-potter.jpg') center;
+  background: url('../img/harry-potter.jpg') center #000;
 }
 
 .nintendo-bg {
-  background: url('../img/nintendo.jpg') center;
+  background: url('../img/nintendo.jpg') center #000;
 }
 
 .hangman-container {
-  width: 65%;
+  width: 50%;
   margin: 0 auto;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.7);
+  height: 700px;
 }
 
 h1, h2, h3 {
@@ -108,12 +109,15 @@ p{
 #alphabet {
   @include clear;
   margin:15px auto;
-  padding:0;
+  padding:15px;
   max-width:900px;
 }
 
-#alphabet li {
-  float:left;
+.mario-style li,
+.indiana-style li,
+.harry-style li {
+  display: inline-block;
+  text-align: center;
   margin: 0 10px 10px 0;
   list-style:none;
   width:35px;
@@ -124,11 +128,45 @@ p{
   cursor:pointer;
   @include corners(5px);
   border: solid 1px $white;
+}
+
+.mario-style li {
+    &:nth-child(2n) {
+      background: #ED1A24;
+      color: #fff;
+    }
+    &:nth-child(2n-1) {
+      background: #0CB14B;
+      color: #fff;
+    }
+    &:hover{
+      background:#fff;
+      color:#000;
+    }
+}
+
+.indiana-style li {
+    &:nth-child(n) {
+      background: url('../img/indy-papyrus.jpg');
+      color: #fff;
+      text-shadow: 1px 1px 3px #000;
+    }
     
     &:hover{
-      background:$base-color;
-      border: solid 1px $white;
-      color:$white;
+      background:#fff;
+      color:#000;
+    }
+}
+
+.harry-style li {
+    &:nth-child(n) {
+      background: url('../img/stars.jpg');
+      color: #fff;
+    }
+    
+    &:hover{
+      background:#fff;
+      color:#000;
     }
 }
 
@@ -162,15 +200,41 @@ p{
   display: none;
 }
 
+.guess {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.hangman-container {
+  p:first-child {
+    padding-top: 15px;
+  }
+}
+
 #mylives{
-  font-size:1.6em;
-  text-align:center;
-  display:block;
+  font-size: 2.6em;
+  text-align: center;
+  display: block;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.footer-style {
+  background: #000;
+  padding: 30px 0;
+}
+
+button.indiana-style {
+  background: url('../img/indiana-jones-gradient.png');
+}
+
+button.harry-style {
+  background: #070F12;
 }
 
 button{
   @include corners (5px);
-  background:$base-color;
+  background:#0065B3;
   color:$white;
   border: solid 1px $white;
   text-decoration:none;
@@ -184,8 +248,7 @@ button{
     &:hover{
       @include transition;
       background:$white;
-      border: solid 1px $white;
-      color:$base-color;
+      color:#000;
     }
 }
 

@@ -1,5 +1,3 @@
-window.onload = function () {
-
 // Variables
 
   var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
@@ -21,8 +19,6 @@ window.onload = function () {
   var showCategory = document.querySelector("#scategory");
   var getHint = document.querySelector("#hint");
   var showClue = document.querySelector("#clue");
-
-
 
   // Create Alphabet
   function buttons() {
@@ -51,12 +47,17 @@ window.onload = function () {
     if (chosenCategory === categories[0]) {
       categoryName.innerHTML = "The Category Is Harry Potter";
       addClass('.wrapper', ' harry-bg');
+      addClass('#alphabet', ' harry-style');
+      addClass('#reset', ' harry-style');
     } else if (chosenCategory === categories[1]) {
       categoryName.innerHTML = "The Category Is Indiana Jones";
       addClass('.wrapper', ' indy-bg');
+      addClass('#alphabet', ' indiana-style');
+      addClass('#reset', ' indiana-style');
     } else if (chosenCategory === categories[2]) {
       categoryName.innerHTML = "The Category Is Nintendo";
       addClass('.wrapper', ' nintendo-bg');
+      addClass('#alphabet', ' mario-style');
     }
   }
 
@@ -130,7 +131,6 @@ window.onload = function () {
 
     chosenCategory = categories[Math.floor(Math.random() * categories.length)];
     word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
-    word = word.replace(/\s/g, "-");
     console.log(word);
     buttons();
 
@@ -164,6 +164,6 @@ window.onload = function () {
     location.reload();
     play();
   }
-}
+
 
 
