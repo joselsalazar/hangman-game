@@ -98,6 +98,10 @@ p {
   clear: both;
 }
 
+.bigger {
+  font-size: 5em !important;
+}
+
 .hangman-container {
   margin: 0 auto;
   background: rgba(0, 0, 0, 0.7);

@@ -14,11 +14,15 @@
   var counter ;           // Count correct guesses
   var space;              // Number of spaces in word '-'
 
-  // Get Elements
+  // Element Storage
   var showLives = document.querySelector("#mylives");
   var showCategory = document.querySelector("#scategory");
   var getHint = document.querySelector("#hint");
   var showClue = document.querySelector("#clue");
+  var audio = new Audio('assets/audio/game-over.mp3');
+  var winnerAudio = new Audio('assets/audio/you-win.wav');
+  var coinAudio = new Audio('assets/audio/coin.wav');
+  var errorAudio = new Audio('assets/audio/error.wav');
 
   // Create Alphabet
   function buttons() {
@@ -83,16 +87,19 @@
     }
   }
   
-  // Show lives
+  // Show Lives
    function comments() {
     showLives.innerHTML = "You have " + lives + " lives";
     if (lives < 1) {
-      showLives.innerHTML = "Game Over!";
+      showLives.innerHTML = "Game Over! <br> Loser!";
       addClass('#buttons', 'hide-me');
+      addClass('#mylives', 'bigger');
+      audio.play();
     }
     for (var i = 0; i < guesses.length; i++) {
       if (counter + space === guesses.length) {
         showLives.innerHTML = "You Win!";
+        winnerAudio.play();
       }
     }
   }
@@ -108,12 +115,14 @@
         if (word[i] === guess) {
           guesses[i].innerHTML = guess;
           counter += 1;
+          coinAudio.play();
         } 
       }
       var j = (word.indexOf(guess));
       if (j === -1) {
         lives -= 1;
         comments();
+        errorAudio.play();
       } else {
         comments();
       }
@@ -122,7 +131,7 @@
   
     
   // Play
-  function play() {
+  function playGame() {
     categories = [
         ["hermione", "snape", "voldemort", "hedwig", "hagrid"],
         ["indiana-jones", "marion", "short-round", "spielberg", "fedora"],
@@ -143,7 +152,7 @@
     selectCat();
   }
 
-  play();
+  playGame();
   
   // Hints / Clues
     hints = [
@@ -162,7 +171,7 @@
     correct.parentNode.removeChild(correct);
     letters.parentNode.removeChild(letters);
     location.reload();
-    play();
+    playGame();
   }
 
 
