@@ -1,72 +1,12 @@
-/* Variabes */  
-$orange: #ffa600;
-$green: #c1d72e;
-$blue: #82d2e5;
-$grey:#f3f3f3;
-$white: #fff;
-$base-color:$green ;
+/*=====================================
+  GLOBAL IMPORTS
+=====================================*/
 
-/* Mixin's */ 
+@import 'reset/reset';
+@import 'components/index';
+@import 'layout/index';
 
-@mixin transition {
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
 
-@mixin clear {
-  &:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-}
-
- @mixin box-size {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
- @mixin transition {
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-@mixin fade {
-  -moz-transition: all 1s ease-in;
-  -moz-transition:all 0.3s ease-in-out;
-  -webkit-transition:all 0.3s ease-in-out;
-}
-
-@mixin opacity {
-  opacity:0.4;
-  filter:alpha(opacity=40); 
-  @include fade;
-}
-
-@mixin corners ($radius) {
-  -moz-border-radius: $radius;
-  -webkit-border-radius: $radius;
-  border-radius: $radius; 
-  -khtml-border-radius: $radius; 
-}
-
-body {
-  background:#000;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  color:$white;
-  height:100%;
-  text-align:center;
-  font-size:18px;
-  margin: 0;
-}
-
-.wrapper {
-  @include clear;
-  width:100%;
-}
 
 .indy-bg {
   background: url('../img/indiana-jones.jpg') center #000;
@@ -78,32 +18,6 @@ body {
 
 .nintendo-bg {
   background: url('../img/nintendo.jpg') center #000;
-}
-
-.hangman-container {
-  width: 50%;
-  margin: 0 auto;
-  background: rgba(0,0,0,0.7);
-  height: 700px;
-}
-
-h1, h2, h3 {
-	font-family: 'Roboto', sans-serif;
-	font-weight: 100;
-	text-transform: uppercase;
-   margin:5px 0;
-}
-
-h1 {
-	font-size: 2.6em;
-}
-
-h2 {
-	font-size: 1.6em;
-}
-
-p{
-  font-size: 1.6em;
 }
 
 #alphabet {
@@ -124,7 +38,6 @@ p{
   height:30px;
   padding-top:10px;
   background:$white;
-  color:$base-color;
   cursor:pointer;
   @include corners(5px);
   border: solid 1px $white;
@@ -170,21 +83,7 @@ p{
     }
 }
 
-#my-word {
-  margin: 0;
-  display: block;
-  padding: 0;
-  display:block;
-}
 
-#my-word li {
-  position: relative;
-  list-style: none;
-  margin: 0;
-  display: inline-block;
-  padding: 0 10px;
-  font-size:1.6em;
-}
 
 .active {
   @include opacity;
@@ -251,15 +150,3 @@ button{
       color:#000;
     }
 }
-
-@media (max-width: 767px) {
-  #alphabet {
-  padding:0 0 0 15px;
-}
-  }
-
-  @media (max-width: 480px) {
-  #alphabet {
-  padding:0 0 0 25px;
-}
-  }

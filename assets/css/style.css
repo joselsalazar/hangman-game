@@ -1,5 +1,65 @@
+/*=====================================
+  GLOBAL IMPORTS
+=====================================*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*=========================
+	Media Queries
+=========================*/
+/* Use tablet and desktop */
 /* Variabes */
-/* Mixin's */
 body {
   background: #000;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -8,34 +68,6 @@ body {
   text-align: center;
   font-size: 18px;
   margin: 0;
-}
-
-.wrapper {
-  width: 100%;
-}
-.wrapper:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.indy-bg {
-  background: url("../img/indiana-jones.jpg") center #000;
-}
-
-.harry-bg {
-  background: url("../img/harry-potter.jpg") center #000;
-}
-
-.nintendo-bg {
-  background: url("../img/nintendo.jpg") center #000;
-}
-
-.hangman-container {
-  width: 50%;
-  margin: 0 auto;
-  background: rgba(0, 0, 0, 0.7);
-  height: 700px;
 }
 
 h1, h2, h3 {
@@ -55,6 +87,78 @@ h2 {
 
 p {
   font-size: 1.6em;
+}
+
+.wrapper {
+  width: 100%;
+}
+.wrapper:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.hangman-container {
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.7);
+}
+.hangman-container p {
+  line-height: 1.2;
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .hangman-container {
+    width: 75%;
+  }
+}
+@media (min-width: 1200px) {
+  .hangman-container {
+    width: 50%;
+  }
+}
+
+header {
+  padding: 5%;
+}
+@media (min-width: 768px) {
+  header {
+    padding: 15px;
+  }
+}
+
+#my-word {
+  display: block;
+  padding: 0;
+  display: block;
+  margin: 25px 0;
+}
+#my-word li {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 1.6em;
+}
+
+.hold {
+  margin: 40px 0;
+}
+
+.container {
+  padding: 5%;
+}
+
+.indy-bg {
+  background: url("../img/indiana-jones.jpg") center #000;
+}
+
+.harry-bg {
+  background: url("../img/harry-potter.jpg") center #000;
+}
+
+.nintendo-bg {
+  background: url("../img/nintendo.jpg") center #000;
 }
 
 #alphabet {
@@ -79,7 +183,6 @@ p {
   height: 30px;
   padding-top: 10px;
   background: #fff;
-  color: #c1d72e;
   cursor: pointer;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -118,22 +221,6 @@ p {
 .harry-style li:hover {
   background: #fff;
   color: #000;
-}
-
-#my-word {
-  margin: 0;
-  display: block;
-  padding: 0;
-  display: block;
-}
-
-#my-word li {
-  position: relative;
-  list-style: none;
-  margin: 0;
-  display: inline-block;
-  padding: 0 10px;
-  font-size: 1.6em;
 }
 
 .active {
@@ -211,17 +298,6 @@ button:hover {
   transition: all 0.3s ease-in-out;
   background: #fff;
   color: #000;
-}
-
-@media (max-width: 767px) {
-  #alphabet {
-    padding: 0 0 0 15px;
-  }
-}
-@media (max-width: 480px) {
-  #alphabet {
-    padding: 0 0 0 25px;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */
