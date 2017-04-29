@@ -137,7 +137,7 @@
   // Play
     categories = [
         ["hermione", "snape", "voldemort", "hedwig", "hagrid"],
-        ["indiana", "marion", "round", "spielberg", "fedora"],
+        ["indiana", "marion", "round", "henry", "fedora"],
         ["mario", "peach", "luigi", "wario", "kong"]
     ];
 
@@ -157,7 +157,7 @@
   // Hints / Clues
     hints = [
         ["Ron's future wife", "Professor who loves Harry's mom", "He who shall not be named", "Harry's Owl", "Sometimes known as Hagger"],
-        ["The main character!", "Indiana's love interest", "Indiana's forgettable sidekick, short...", "Director of the films", "Indiana's Hat"],
+        ["The main character!", "Indiana's love interest", "Indiana's forgettable sidekick, short...", "Indiana's Father", "Indiana's Hat"],
         ["Main character of the Nintendo universe", "The Princess in Pink", "Mario's little brother", "Mario's fat arch nemesis", "The Ape that likes bananas and stars in his own games! Donkey..."]
     ];
 
